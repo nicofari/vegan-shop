@@ -12,7 +12,7 @@ class TestDomain(unittest.TestCase):
         self.assertEqual(1756, target.quantity)
         self.assertEqual(2.20, target.buy_price)
         self.assertEqual(4.19, target.sell_price)
-        self.assertEqual('Tofu_4.19', target.get_key())
+        self.assertEqual('Tofu', target.get_key())
 
 
     def test_store_put_get(self):

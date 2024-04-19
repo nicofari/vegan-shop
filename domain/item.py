@@ -6,5 +6,5 @@ class Item:
         self.sell_price = sell_price
 
     def get_key(self):
-        return self.product_name + '_' + str(self.sell_price)
+        return self.product_name
         
