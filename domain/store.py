@@ -1,8 +1,17 @@
 from .too_many_exception import TooManyException
+from .item import Item
+
+import json
 
 class Store:
-    def __init__(self):
-        self.store = {}
+    """Represents a store of items"""
+    """API: get|put|find|list items in store """
+    
+    def __init__(self, store = None):
+        if store is None:
+            self.store = {}
+        else:
+            self.store = store
 
     def put_item(self, item):
         item_in_store = self.find_item(item)
@@ -10,8 +19,6 @@ class Store:
             self.store[item.get_key()] = item
         else:
             item_in_store.quantity += item.quantity
-
-        return self
 
     def find_item(self, item):
         return self.store.get(item.get_key(), None)
@@ -34,5 +41,4 @@ class Store:
             else:
                 item_in_store.quantity -= item.quantity
 
-        return self
-
+        return item_in_store
