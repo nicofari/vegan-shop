@@ -2,6 +2,7 @@ import unittest
 
 from ..domain.item import Item
 from ..domain.store import Store
+from ..domain.too_many_exception import TooManyException
 
 class TestDomain(unittest.TestCase):
 
@@ -15,18 +16,43 @@ class TestDomain(unittest.TestCase):
         self.assertEqual('Tofu', target.get_key())
 
 
-    def test_store_put_get(self):
+    def test_store_put_find(self):
         target = Store()
 
         item1 = Item('tofu', 500, 2.20, 4.19)
         target.put_item(item1)
 
-        self.assertEqual(item1, target.get_item(item1))
+        self.assertEqual(item1, target.find_item(item1))
 
         item2 = Item('tofu', 25, 2.20, 4.19)
         target.put_item(item2)
 
-        self.assertEqual(525, target.get_item(item2).quantity)
+        self.assertEqual(525, target.find_item(item2).quantity)
+
+    def test_store_get(self):
+        target = Store()
+
+        item1 = Item('tofu', 500, 2.20, 4.19)
+        target.put_item(item1)
+
+        itemToSell = Item('latte di soia', 12, 1, 2)
+
+        actual = target.get_item(itemToSell)
+
+        self.assertEqual(None, actual)
+
+        itemToSell = Item('tofu', 1500, 2.20, 4.19)
+
+        with self.assertRaises(TooManyException):
+            target.get_item(itemToSell)
+
+        itemToSell = Item('tofu', 300, 2.20, 4.19)
+
+        target.get_item(itemToSell)
+
+        itemAfterSell = target.find_item(itemToSell)
+
+        self.assertEqual(200, itemAfterSell.quantity)
 
     def test_store_list(self):
         target = Store()
@@ -43,7 +69,6 @@ seitan 5 €5.49
 """
         self.assertEqual(expected_output, target.list())
 
-        
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,9 +1,11 @@
+from .too_many_exception import TooManyException
+
 class Store:
     def __init__(self):
         self.store = {}
 
     def put_item(self, item):
-        item_in_store = self.get_item(item)
+        item_in_store = self.find_item(item)
         if item_in_store is None:
             self.store[item.get_key()] = item
         else:
@@ -11,7 +13,7 @@ class Store:
 
         return self
 
-    def get_item(self, item):
+    def find_item(self, item):
         return self.store.get(item.get_key(), None)
     
     def list(self):
@@ -21,3 +23,16 @@ class Store:
         output += '\n'
 
         return output
+    
+    def get_item(self, item):
+        item_in_store = self.find_item(item)
+        if item_in_store is None:
+            return None
+        else:
+            if item_in_store.quantity < item.quantity:
+                raise TooManyException()
+            else:
+                item_in_store.quantity -= item.quantity
+
+        return self
+
