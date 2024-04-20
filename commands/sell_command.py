@@ -4,6 +4,11 @@ from domain.item import Item
 
 class SellCommand(BaseCommand):
 
+    def __init__(self, store, country_code, validator, registry):
+        super().__init__(store, country_code, validator)
+
+        self.registry = registry
+
     def run(self):
         messages = MESSAGES[self.country_code]
         boolean_values = BOOLEAN_VALUES[self.country_code]
@@ -28,12 +33,14 @@ class SellCommand(BaseCommand):
                 return
 
             l_quantity = int(l_quantity)
-            
+
             if l_quantity > l_item_in_store.quantity:
                 print(messages["OUT_OF_RESOURCE"] %(l_name, l_item_in_store.quantity))
                 return
 
             self.store.get_item(Item(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price))
+
+            self.registry.store_income(l_item_in_store.sell_price - l_item_in_store.buy_price, l_item_in_store.sell_price)
 
             l_continue = input(messages["ADD_ANOTHER_PRODUCT_YES_NO"])
 

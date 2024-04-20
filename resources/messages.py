@@ -16,7 +16,9 @@ MESSAGES = {
         "STORE_LIST_HEADER": "PRODOTTO QUANTITÀ PREZZO",
         "PRODUCT_NOT_FOUND": "Il prodotto [%s] non è presente in magazzino",
         "OUT_OF_RESOURCE": "Il prodotto [%s] è disponibile solo in [%s] unità",
-        "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)"
+        "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)",
+
+        "REVENUE_LINE": "Profitto: lordo=€%.2f netto=€%.2f"
     },
     "en": {
         "COMMAND_PROMPT": "Insert command: ",
@@ -35,7 +37,9 @@ MESSAGES = {
         "STORE_LIST_HEADER": "PRODUCT QUANTITY PRICE",
         "PRODUCT_NOT_FOUND": "Product [%s] is not present",
         "OUT_OF_RESOURCE": "Product [%s] has [%s] items only in stock",
-        "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)"
+        "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)",
+
+        "REVENUE_LINE": "Revenue: gross=€%.2f net=€%.2f"
     }
 }
 

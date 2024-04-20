@@ -2,6 +2,7 @@ import unittest
 
 from domain.item import Item
 from domain.store import Store
+from domain.registry import Registry
 from domain.too_many_exception import TooManyException
 
 class TestDomain(unittest.TestCase):
@@ -69,6 +70,17 @@ seitan 5 €5.49
 """
         self.assertEqual(expected_output, target.list("PRODOTTO QUANTITÀ PREZZO"))
 
+    def test_registry(self):
+        target = Registry()
+
+        self.assertEqual(0.0, target.gross_income)
+        self.assertEqual(0.0, target.net_income)
+
+        target.store_income(27.45 - 15, 27.45)
+        target.store_income(6.45 - 2, 6.45)
+
+        self.assertEqual(16.9, target.net_income)
+        self.assertEqual(33.9, target.gross_income)
 
 if __name__ == '__main__':
     unittest.main()
