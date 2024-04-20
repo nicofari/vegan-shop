@@ -11,6 +11,7 @@ class ConsoleApp:
     SELL_COMMAND_INDEX = 2
     REVENUE_COMMAND_INDEX = 3,
     HELP_COMMAND_INDEX = 4
+    EXIT_COMMAND_INDEX = 5
 
     def __init__(
             self, 
@@ -54,4 +55,7 @@ class ConsoleApp:
                     case self.HELP_COMMAND_INDEX:
                         print(messages["COMMAND_HELP"])
 
-                        
+                    case self.EXIT_COMMAND_INDEX:
+                        print("bye")
+                        return
+
