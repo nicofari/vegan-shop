@@ -20,6 +20,8 @@ class AddItemCommand(BaseCommand):
             print(messages["INVALID_INTEGER"] %(l_quantity))
             return
 
+        l_quantity = int(l_quantity)
+
         l_item_in_store = self.store.find_item_by_name(l_name)
         if l_item_in_store is None:
             l_buy_price = input(messages["BUY_PRICE_INPUT"])
@@ -32,7 +34,7 @@ class AddItemCommand(BaseCommand):
                 print(messages["INVALID_FLOAT"] %(l_sell_price))
                 return
 
-            l_new_item = Item(l_name, l_quantity, l_buy_price, l_sell_price)
+            l_new_item = Item(l_name, l_quantity, float(l_buy_price), float(l_sell_price))
         else:
             l_new_item = Item(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price)
 

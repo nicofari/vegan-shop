@@ -1,9 +1,9 @@
 import unittest
 
-from ..domain.item import Item
-from ..domain.store import Store
-from ..services.json_storage import JsonStorage
-from ..services.validator import Validator
+from domain.item import Item
+from domain.store import Store
+from services.json_storage import JsonStorage
+from services.validator import Validator
 
 class TestServices(unittest.TestCase):
 

@@ -1,8 +1,8 @@
 import unittest
 
-from ..domain.item import Item
-from ..domain.store import Store
-from ..domain.too_many_exception import TooManyException
+from domain.item import Item
+from domain.store import Store
+from domain.too_many_exception import TooManyException
 
 class TestDomain(unittest.TestCase):
 
@@ -35,7 +35,7 @@ class TestDomain(unittest.TestCase):
         item1 = Item('tofu', 500, 2.20, 4.19)
         target.put_item(item1)
 
-        itemToSell = Item('latte di soia', 12, 1, 2)
+        itemToSell = Item('latte di soia', 12, 1.0, 2.0)
 
         actual = target.get_item(itemToSell)
 
@@ -58,7 +58,7 @@ class TestDomain(unittest.TestCase):
         target = Store()
 
         item1 = Item('latte di soia', 20, 0.80, 1.40)
-        item2 = Item('seitan', 5, 3, 5.49)
+        item2 = Item('seitan', 5, 3.0, 5.49)
 
         target.put_item(item1)
         target.put_item(item2)

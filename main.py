@@ -3,6 +3,7 @@ from domain.store import Store
 from services.validator import Validator
 from commands.add_item_command import AddItemCommand
 from commands.list_command import ListCommand
+from commands.sell_command import SellCommand
 
 def main():
     store = Store()
@@ -13,7 +14,8 @@ def main():
         store, 
         country_code, 
         AddItemCommand(store, country_code, validator),
-        ListCommand(store, country_code, validator)
+        ListCommand(store, country_code, validator),
+        SellCommand(store, country_code, validator)
     )
 
     console_app.run()

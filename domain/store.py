@@ -4,6 +4,7 @@ from .item import Item
 import json
 
 class Store:
+    """Store"""
     """Represents a store of items"""
     """API: get|put|find|list items in store """
     
