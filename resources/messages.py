@@ -1,20 +1,28 @@
 MESSAGES = {
     "it": {
-        "command_prompt": "Inserisci un comando: ",
-        "unrecognized_command": "Comando non valido [%s]. I comandi disponibili sono [%s]",
+        "COMMAND_PROMPT": "Inserisci un comando: ",
+        "UNRECOGNIZED_COMMAND": "Comando non valido [%s]. I comandi disponibili sono [%s]",
 
-        "product_name_input": "Nome del prodotto (<INVIO> per tornare indietro): ",
-        "quantity_input": "Quantità: ",
-        "buy_price_input": "Prezzo di acquisto: ",
-        "sell_price_input": "Prezzo di vendita: "
+        "PRODUCT_NAME_INPUT": "Nome del prodotto (<INVIO> per tornare indietro): ",
+        "QUANTITY_INPUT": "Quantità: ",
+        "BUY_PRICE_INPUT": "Prezzo di acquisto: ",
+        "SELL_PRICE_INPUT": "Prezzo di vendita: ",
+
+        "INVALID_STRING": "Input non valido: sono accettati solo spazi e numeri o lettere",
+        "INVALID_INTEGER": "[%s] non è un intero valido",
+        "INVALID_FLOAT": "[%s] non è un numero decimale valido"
     },
     "en": {
-        "command_prompt": "Insert command: ",
-        "unrecognized_command": "Unknown command [%s]. Available commands are [%s]",
+        "COMMAND_PROMPT": "Insert command: ",
+        "UNRECOGNIZED_COMMAND": "Unknown command [%s]. Available commands are [%s]",
 
-        "product_name_input": "Product name (ENTER to go back): ",
-        "quantity_input": "Amount: ",
-        "buy_price_input": "Buy price: ",
-        "sell_price_input": "Sell price: "
+        "PRODUCT_NAME_INPUT": "Product name (ENTER to go back): ",
+        "QUANTITY_INPUT": "Amount: ",
+        "BUY_PRICE_INPUT": "Buy price: ",
+        "SELL_PRICE_INPUT": "Sell price: ",
+
+        "INVALID_STRING": "Invalid input: alphanumeric characters only are allowed",
+        "INVALID_INTEGER": "[%s] is not a valid integer value",
+        "INVALID_FLOAT": "[%s] is not a valid float value"
     }
 }

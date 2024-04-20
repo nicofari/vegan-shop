@@ -23,9 +23,9 @@ class ConsoleApp:
         commands = self.COMMANDS[self.country_code]
 
         while (True):
-            cmd = input(messages["command_prompt"])
+            cmd = input(messages["COMMAND_PROMPT"])
             if cmd not in commands:
-                print(messages["unrecognized_command"] %(cmd, ''.join(commands)))
+                print(messages["UNRECOGNIZED_COMMAND"] %(cmd, ','.join(commands)))
             else:
                 cmd_index = commands.index(cmd)
                 match cmd_index:

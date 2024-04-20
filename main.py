@@ -1,15 +1,17 @@
 from console_app import ConsoleApp
 from domain.store import Store
+from services.validator import Validator
 from commands.add_item_command import AddItemCommand
 
 def main():
     store = Store()
     country_code = 'it'
-    
+    validator = Validator()
+
     console_app = ConsoleApp(
         store, 
         country_code, 
-        AddItemCommand(store, country_code)
+        AddItemCommand(store, country_code, validator)
     )
 
     console_app.run()
