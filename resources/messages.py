@@ -18,7 +18,17 @@ MESSAGES = {
         "OUT_OF_RESOURCE": "Il prodotto [%s] è disponibile solo in [%s] unità",
         "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)",
 
-        "REVENUE_LINE": "Profitto: lordo=€%.2f netto=€%.2f"
+        "REVENUE_LINE": "Profitto: lordo=€%.2f netto=€%.2f",
+
+        "COMMAND_HELP": """
+I comandi disponibili sono i seguenti:
+- aggiungi: aggiungi un prodotto al magazzino
+- elenca: elenca i prodotto in magazzino
+- vendita: registra una vendita effettuata
+- profitti: mostra i profitti totali
+- aiuto: mostra i possibili comandi
+- chiudi: esci dal programma
+"""
     },
     "en": {
         "COMMAND_PROMPT": "Insert command: ",
@@ -39,7 +49,17 @@ MESSAGES = {
         "OUT_OF_RESOURCE": "Product [%s] has [%s] items only in stock",
         "ADD_ANOTHER_PRODUCT_YES_NO": "Aggiungere un altro prodotto? (si/no)",
 
-        "REVENUE_LINE": "Revenue: gross=€%.2f net=€%.2f"
+        "REVENUE_LINE": "Revenue: gross=€%.2f net=€%.2f",
+
+        "COMMAND_HELP": """
+Available commands:
+- insert: add a new item to the store
+- list: list store's content
+- sell: sell an item
+- revenue: show current revenue
+- help: print this message
+- exit: close the program
+"""
     }
 }
 

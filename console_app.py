@@ -2,14 +2,15 @@ from resources.messages import MESSAGES
 
 class ConsoleApp:
     COMMANDS = {
-        "it": ["aggiungi", "elenca", "vendita","profitti", "chiudi"],
-        "en": ["insert", "list", "sell", "revenue", "exit"]
+        "it": ["aggiungi", "elenca", "vendita","profitti", "aiuto", "chiudi"],
+        "en": ["insert", "list", "sell", "revenue", "help", "exit"]
     }
 
     INSERT_COMMAND_INDEX = 0
     LIST_COMMAND_INDEX = 1
     SELL_COMMAND_INDEX = 2
-    REVENUE_COMMAND_INDEX = 3
+    REVENUE_COMMAND_INDEX = 3,
+    HELP_COMMAND_INDEX = 4
 
     def __init__(
             self, 
@@ -49,4 +50,8 @@ class ConsoleApp:
 
                     case self.REVENUE_COMMAND_INDEX:
                         self.income_list_command.run()
+
+                    case self.HELP_COMMAND_INDEX:
+                        print(messages["COMMAND_HELP"])
+
                         
