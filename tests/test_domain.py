@@ -67,7 +67,7 @@ class TestDomain(unittest.TestCase):
 latte di soia 20 €1.4
 seitan 5 €5.49
 """
-        self.assertEqual(expected_output, target.list())
+        self.assertEqual(expected_output, target.list("PRODOTTO QUANTITÀ PREZZO"))
 
 
 if __name__ == '__main__':

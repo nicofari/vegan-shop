@@ -10,7 +10,9 @@ MESSAGES = {
 
         "INVALID_STRING": "Input non valido: sono accettati solo spazi e numeri o lettere",
         "INVALID_INTEGER": "[%s] non è un intero valido",
-        "INVALID_FLOAT": "[%s] non è un numero decimale valido"
+        "INVALID_FLOAT": "[%s] non è un numero decimale valido",
+
+        "STORE_LIST_HEADER": "PRODOTTO QUANTITÀ PREZZO"
     },
     "en": {
         "COMMAND_PROMPT": "Insert command: ",
@@ -23,6 +25,8 @@ MESSAGES = {
 
         "INVALID_STRING": "Invalid input: alphanumeric characters only are allowed",
         "INVALID_INTEGER": "[%s] is not a valid integer value",
-        "INVALID_FLOAT": "[%s] is not a valid float value"
+        "INVALID_FLOAT": "[%s] is not a valid float value",
+
+        "STORE_LIST_HEADER": "PRODUCT QUANTITY PRICE"
     }
 }

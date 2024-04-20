@@ -23,8 +23,8 @@ class Store:
     def find_item_by_name(self, product_name):
         return self.store.get(product_name, None)
     
-    def list(self):
-        output = 'PRODOTTO QUANTITÀ PREZZO'
+    def list(self, header_line):
+        output = header_line
         for k, item in self.store.items():
             output += '\n' + item.product_name + ' ' + str(item.quantity) + ' ' + '€' + str(item.sell_price)
         output += '\n'
