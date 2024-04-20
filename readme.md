@@ -15,6 +15,6 @@ docker run --name test_python --rm -v $(pwd):/app python:3.11-alpine3.17  python
 To run the application:
 
 ```
-docker run --name test_python -ti --rm -v $(pwd):/app python:3.11-alpine3.17  python /app/main.py
+docker run --name test_python -ti --rm -v $(pwd):/app python:3.11-alpine3.17  python /app/main.py /tmp/vegan_shop_store.json it
 ```
 

@@ -1,3 +1,5 @@
+import sys
+
 from console_app import ConsoleApp
 from domain.store import Store
 from services.json_storage import JsonStorage
@@ -9,8 +11,8 @@ from domain.registry import Registry
 from commands.income_list_command import IncomeListCommand
 
 def main():
-    data_file = "/tmp/vegan_shop_store.json"
-    country_code = 'it'
+    data_file = sys.argv[1]
+    country_code = sys.argv[2]
 
     store = JsonStorage.read(data_file)
     validator = Validator()
