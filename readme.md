@@ -31,7 +31,7 @@ docker run --name test_python -ti --rm -v $(pwd):/app python:3.11-alpine3.17  py
 ### International support
 Application output is multi-lingual.
 Supported languages are Italian and English.
-Desided country code must be passed as a parameter to the main entrypoint script.
+Desired country code must be passed as a parameter to the main entrypoint script.
 
 ### Data persistency
 Shop store data are persisted in json format into a file.
