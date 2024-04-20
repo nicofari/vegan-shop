@@ -1,5 +1,6 @@
 from console_app import ConsoleApp
 from domain.store import Store
+from services.json_storage import JsonStorage
 from services.validator import Validator
 from commands.add_item_command import AddItemCommand
 from commands.list_command import ListCommand
@@ -8,8 +9,10 @@ from domain.registry import Registry
 from commands.income_list_command import IncomeListCommand
 
 def main():
-    store = Store()
+    data_file = "/tmp/vegan_shop_store.json"
     country_code = 'it'
+
+    store = JsonStorage.read(data_file)
     validator = Validator()
     registry = Registry()
 
@@ -23,6 +26,8 @@ def main():
     )
 
     console_app.run()
+
+    JsonStorage.write(store, data_file)
 
 if __name__ == '__main__':
     main()

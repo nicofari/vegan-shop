@@ -14,13 +14,15 @@ class JsonStorage:
 
     @staticmethod
     def read(file_name):
-        with open(file_name, "r") as input:
-            d = json.load(input)
-            store = {}
-            for k, v in d.items():
-                item = Item('', 0, 0.0, 0.0)
-                item.__dict__.update(v)
-                store[item.product_name] = item
+        try:
+            with open(file_name, "r") as input:
+                d = json.load(input)
+                store = {}
+                for k, v in d.items():
+                    item = Item('', 0, 0.0, 0.0)
+                    item.__dict__.update(v)
+                    store[item.product_name] = item
 
-            return Store(store)
-        
+                return Store(store)
+        except FileNotFoundError:
+            return Store()        
