@@ -18,7 +18,7 @@ class TestServices(unittest.TestCase):
         store2 = JsonStorage.read(file_name)
 
         # Then
-        self.assertEqual(item1, store2.find_item(item1))
+        self.assertEqual(item1, store2.find_item_by_name(item1.product_name))
 
         
 

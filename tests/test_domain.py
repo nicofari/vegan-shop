@@ -22,12 +22,12 @@ class TestDomain(unittest.TestCase):
         item1 = Item('tofu', 500, 2.20, 4.19)
         target.put_item(item1)
 
-        self.assertEqual(item1, target.find_item(item1))
+        self.assertEqual(item1, target.find_item_by_name(item1.product_name))
 
         item2 = Item('tofu', 25, 2.20, 4.19)
         target.put_item(item2)
 
-        self.assertEqual(525, target.find_item(item2).quantity)
+        self.assertEqual(525, target.find_item_by_name(item2.product_name).quantity)
 
     def test_store_get(self):
         target = Store()
@@ -50,7 +50,7 @@ class TestDomain(unittest.TestCase):
 
         target.get_item(itemToSell)
 
-        itemAfterSell = target.find_item(itemToSell)
+        itemAfterSell = target.find_item_by_name(itemToSell.product_name)
 
         self.assertEqual(200, itemAfterSell.quantity)
 

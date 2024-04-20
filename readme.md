@@ -9,6 +9,12 @@ Simulates a vegan shop with sell/buy/list operations.
 To run unit tests (requires docker):
 
 ```
-docker run --name test_python --rm -v $(pwd):/app python:3.11-alpine3.17  python -m unittest /app/vegan_shop/tests/test_domain.py
+docker run --name test_python --rm -v $(pwd):/app python:3.11-alpine3.17  python -m unittest discover .
+```
+
+To run the application:
+
+```
+docker run --name test_python -ti --rm -v $(pwd):/app python:3.11-alpine3.17  python /app/main.py
 ```
 

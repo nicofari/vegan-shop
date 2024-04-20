@@ -14,14 +14,14 @@ class Store:
             self.store = store
 
     def put_item(self, item):
-        item_in_store = self.find_item(item)
+        item_in_store = self.find_item_by_name(item.product_name)
         if item_in_store is None:
             self.store[item.get_key()] = item
         else:
             item_in_store.quantity += item.quantity
 
-    def find_item(self, item):
-        return self.store.get(item.get_key(), None)
+    def find_item_by_name(self, product_name):
+        return self.store.get(product_name, None)
     
     def list(self):
         output = 'PRODOTTO QUANTITÀ PREZZO'
@@ -32,7 +32,7 @@ class Store:
         return output
     
     def get_item(self, item):
-        item_in_store = self.find_item(item)
+        item_in_store = self.find_item_by_name(item.product_name)
         if item_in_store is None:
             return None
         else:
