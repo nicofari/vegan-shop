@@ -28,7 +28,7 @@ To run the application:
 docker run --name test_python -ti --rm -v $(pwd):/app python:3.11-alpine3.17  python /app/main.py /tmp/vegan_shop_store.json it
 ```
 
-### International support
+### Localization support
 Application output is multi-lingual.
 Supported languages are Italian and English.
 Desired country code must be passed as a parameter to the main entrypoint script.

@@ -1,0 +1,2 @@
+class StockExceededException(Exception):
+    pass

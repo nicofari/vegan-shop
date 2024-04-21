@@ -1,5 +1,5 @@
-from .too_many_exception import TooManyException
-from .item import Item
+from .stock_exceeded_exception import StockExceededException
+from .product import Product
 
 import json
 
@@ -15,7 +15,7 @@ class Store:
             self.store = store
 
     def put_item(self, item):
-        item_in_store = self.find_item_by_name(item.product_name)
+        item_in_store = self.find_item_by_name(item.name)
         if item_in_store is None:
             self.store[item.get_key()] = item
         else:
@@ -27,18 +27,18 @@ class Store:
     def list(self, header_line):
         output = header_line
         for k, item in self.store.items():
-            output += '\n' + item.product_name + ' ' + str(item.quantity) + ' ' + '€' + str(item.sell_price)
+            output += '\n' + item.name + ' ' + str(item.quantity) + ' ' + '€' + str(item.sell_price)
         output += '\n'
 
         return output
     
     def get_item(self, item):
-        item_in_store = self.find_item_by_name(item.product_name)
+        item_in_store = self.find_item_by_name(item.name)
         if item_in_store is None:
             return None
         else:
             if item_in_store.quantity < item.quantity:
-                raise TooManyException()
+                raise StockExceededException()
             else:
                 item_in_store.quantity -= item.quantity
 

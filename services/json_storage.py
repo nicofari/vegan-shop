@@ -1,6 +1,6 @@
 import json
 from domain.store import Store
-from domain.item import Item
+from domain.product import Product
 
 class JsonStorage:
     """Serialize/deserialize Store instances to/from json"""
@@ -19,9 +19,9 @@ class JsonStorage:
                 d = json.load(input)
                 store = {}
                 for k, v in d.items():
-                    item = Item('', 0, 0.0, 0.0)
+                    item = Product('', 0, 0.0, 0.0)
                     item.__dict__.update(v)
-                    store[item.product_name] = item
+                    store[item.name] = item
 
                 return Store(store)
         except FileNotFoundError:

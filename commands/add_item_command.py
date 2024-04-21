@@ -1,5 +1,5 @@
 from .base_command import BaseCommand
-from domain.item import Item
+from vegan_shop.domain.product import Product
 from resources.messages import MESSAGES
 
 class AddItemCommand(BaseCommand):
@@ -34,8 +34,8 @@ class AddItemCommand(BaseCommand):
                 print(messages["INVALID_FLOAT"] %(l_sell_price))
                 return
 
-            l_new_item = Item(l_name, l_quantity, float(l_buy_price), float(l_sell_price))
+            l_new_item = Product(l_name, l_quantity, float(l_buy_price), float(l_sell_price))
         else:
-            l_new_item = Item(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price)
+            l_new_item = Product(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price)
 
         self.store.put_item(l_new_item)

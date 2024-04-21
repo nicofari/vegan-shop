@@ -1,2 +1,0 @@
-class TooManyException(Exception):
-    pass

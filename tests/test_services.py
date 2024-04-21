@@ -1,6 +1,6 @@
 import unittest
 
-from domain.item import Item
+from domain.product import Product
 from domain.store import Store
 from services.json_storage import JsonStorage
 from services.validator import Validator
@@ -11,7 +11,7 @@ class TestServices(unittest.TestCase):
         # With
         file_name = '/tmp/store.json'
         store1 = Store()
-        item1 = Item('tofu', 500, 2.20, 4.19)
+        item1 = Product('tofu', 500, 2.20, 4.19)
         store1.put_item(item1)
         JsonStorage.write(store1, file_name)
 
@@ -19,7 +19,7 @@ class TestServices(unittest.TestCase):
         store2 = JsonStorage.read(file_name)
 
         # Then
-        self.assertEqual(item1, store2.find_item_by_name(item1.product_name))
+        self.assertEqual(item1, store2.find_item_by_name(item1.name))
 
         
     def test_validation(self):

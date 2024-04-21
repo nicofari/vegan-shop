@@ -9,10 +9,15 @@ from commands.list_command import ListCommand
 from commands.sell_command import SellCommand
 from domain.registry import Registry
 from commands.income_list_command import IncomeListCommand
+from resources.messages import SUPPORTED_LANGUAGES
 
 def main():
     data_file = sys.argv[1]
     country_code = sys.argv[2]
+
+    if country_code not in SUPPORTED_LANGUAGES:
+        print("%s is not supported: available languages are %s" %(country_code, ','.join(SUPPORTED_LANGUAGES)))
+        return
 
     store = JsonStorage.read(data_file)
     validator = Validator()

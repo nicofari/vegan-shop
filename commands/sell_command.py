@@ -1,6 +1,6 @@
 from .base_command import BaseCommand
 from resources.messages import MESSAGES, BOOLEAN_VALUES
-from domain.item import Item
+from vegan_shop.domain.product import Product
 
 class SellCommand(BaseCommand):
 
@@ -38,7 +38,7 @@ class SellCommand(BaseCommand):
                 print(messages["OUT_OF_RESOURCE"] %(l_name, l_item_in_store.quantity))
                 return
 
-            self.store.get_item(Item(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price))
+            self.store.get_item(Product(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price))
 
             self.registry.store_income(l_item_in_store.sell_price - l_item_in_store.buy_price, l_item_in_store.sell_price)
 

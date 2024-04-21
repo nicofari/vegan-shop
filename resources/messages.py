@@ -1,3 +1,5 @@
+SUPPORTED_LANGUAGES = ["it", "en"]
+
 MESSAGES = {
     "it": {
         "COMMAND_PROMPT": "Inserisci un comando: ",
