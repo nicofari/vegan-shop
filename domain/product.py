@@ -21,6 +21,12 @@ class Product:
 
     def get_key(self):
         return self.name
+
+    def get_gross_income(self):
+        return self.sell_price * self.quantity
+    
+    def get_net_income(self):
+        return self.get_gross_income() - (self.buy_price * self.quantity)
     
     def __eq__(self, other) -> bool:
         is_item = isinstance(other, self.__class__)

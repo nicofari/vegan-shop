@@ -73,14 +73,31 @@ seitan 5 €5.49
     def test_registry(self):
         target = Registry()
 
-        self.assertEqual(0.0, target.gross_income)
-        self.assertEqual(0.0, target.net_income)
+        sell_1 = Product('latte di soia', 5, 0.80, 1.40)
+        sell_2 = Product('tofu', 2, 2.20, 4.19) 
 
-        target.store_income(27.45 - 15, 27.45)
-        target.store_income(6.45 - 2, 6.45)
+        target.add_to_current_sale(sell_1)
+        target.add_to_current_sale(sell_2)
 
-        self.assertEqual(16.9, target.net_income)
-        self.assertEqual(33.9, target.gross_income)
+        self.assertAlmostEqual(6.98, target.get_current_sale_net_income())
+        self.assertAlmostEqual(15.38, target.get_current_sale_gross_income())
+        
+        self.assertEqual("""- 5 X latte di soia: €1.40
+- 2 X tofu: €4.19
+""", target.get_current_sale_report())
+
+        target.clear_current_sale()
+
+        sell_3 = Product('seitan', 2, 1.0, 4.0)
+        target.add_to_current_sale(sell_3)
+
+        self.assertAlmostEqual(6.0, target.get_current_sale_net_income())
+        self.assertAlmostEqual(8.0, target.get_current_sale_gross_income())
+
+        self.assertAlmostEqual(23.38, target.total_gross_income)
+        self.assertAlmostEqual(12.98, target.total_net_income)
+
+        self.assertEqual("- 2 X seitan: €4.00\n", target.get_current_sale_report())
 
 if __name__ == '__main__':
     unittest.main()

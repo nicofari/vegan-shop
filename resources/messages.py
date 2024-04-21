@@ -16,6 +16,8 @@ MESSAGES = {
         "INVALID_BOOLEAN": "Scelta non valida. I valori possibili sono [%s]",
 
         "INSERT_SUCCESSFUL_FEEDBACK": "AGGIUNTO %d X %s",
+        "SELL_FEEDBACK_HEADER": "VENDITA REGISTRATA",
+        "SELL_FEEDBACK_FOOTER": "Totale: €%.2f",
 
         "STORE_LIST_HEADER": "PRODOTTO QUANTITÀ PREZZO",
         "PRODUCT_NOT_FOUND": "Il prodotto [%s] non è presente in magazzino",
@@ -48,7 +50,10 @@ I comandi disponibili sono i seguenti:
         "INVALID_FLOAT": "[%s] is not a valid float value",
         "INVALID_BOOLEAN": "Invalid choice: valid input are [%s]",
 
-        "INSERT_SUCCESSFUL_FEEDBACK": "AGGIUNTO %d X %s",
+        "INSERT_SUCCESSFUL_FEEDBACK": "ADDED %d X %s",
+        
+        "SELL_FEEDBACK_HEADER": "SELL RECORDED",
+        "SELL_FEEDBACK_FOOTER": "Total: €%.2f",
 
         "STORE_LIST_HEADER": "PRODUCT QUANTITY PRICE",
         "PRODUCT_NOT_FOUND": "Product [%s] is not present",
