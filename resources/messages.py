@@ -15,6 +15,8 @@ MESSAGES = {
         "INVALID_FLOAT": "[%s] non è un numero decimale valido",
         "INVALID_BOOLEAN": "Scelta non valida. I valori possibili sono [%s]",
 
+        "INSERT_SUCCESSFUL_FEEDBACK": "AGGIUNTO %d X %s",
+
         "STORE_LIST_HEADER": "PRODOTTO QUANTITÀ PREZZO",
         "PRODUCT_NOT_FOUND": "Il prodotto [%s] non è presente in magazzino",
         "OUT_OF_RESOURCE": "Il prodotto [%s] è disponibile solo in [%s] unità",
@@ -45,6 +47,8 @@ I comandi disponibili sono i seguenti:
         "INVALID_INTEGER": "[%s] is not a valid integer value",
         "INVALID_FLOAT": "[%s] is not a valid float value",
         "INVALID_BOOLEAN": "Invalid choice: valid input are [%s]",
+
+        "INSERT_SUCCESSFUL_FEEDBACK": "AGGIUNTO %d X %s",
 
         "STORE_LIST_HEADER": "PRODUCT QUANTITY PRICE",
         "PRODUCT_NOT_FOUND": "Product [%s] is not present",

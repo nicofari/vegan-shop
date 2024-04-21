@@ -1,6 +1,6 @@
 from .base_command import BaseCommand
 from resources.messages import MESSAGES, BOOLEAN_VALUES
-from vegan_shop.domain.product import Product
+from domain.product import Product
 
 class SellCommand(BaseCommand):
 

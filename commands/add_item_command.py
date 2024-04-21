@@ -1,5 +1,5 @@
 from .base_command import BaseCommand
-from vegan_shop.domain.product import Product
+from domain.product import Product
 from resources.messages import MESSAGES
 
 class AddItemCommand(BaseCommand):
@@ -39,3 +39,5 @@ class AddItemCommand(BaseCommand):
             l_new_item = Product(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price)
 
         self.store.put_item(l_new_item)
+        
+        print(messages["INSERT_SUCCESSFUL_FEEDBACK"] %(l_quantity, l_name))
