@@ -35,7 +35,7 @@ class SellCommand(BaseCommand):
             l_quantity = int(l_quantity)
 
             if l_quantity > l_item_in_store.quantity:
-                print(messages["OUT_OF_RESOURCE"] %(l_name, l_item_in_store.quantity))
+                print(messages["STOCK_EXCEEDED"] %(l_name, l_item_in_store.quantity))
                 return
 
             self.store.get_item(Product(l_name, l_quantity, l_item_in_store.buy_price, l_item_in_store.sell_price))
